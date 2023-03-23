@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Table Generator</title>
+</head>
+<body>
+  <h1>Multiplication Table Generator</h1>
+  <label for="num">Number:</label>
+  <input type="number" id="num"><br><br>
+  <label for="limit">Limit:</label>
+  <input type="number" id="limit"><br><br>
+  <button onclick="generateTable()">Generate Table</button>
+  <br><br>
+  <table id="table"></table>
+
+  <script>
+    function generateTable() {
+      // Get user inputs
+      const num = document.getElementById("num").value;
+      const limit = document.getElementById("limit").value;
+
+      // Clear old table
+      document.getElementById("table").innerHTML = "";
+
+      // Generate new table
+      for (let i = 1; i <= limit; i++) {
+        const product = num * i;
+        const row = "<tr><td>" + num + " x " + i + "</td><td>=</td><td>" + product + "</td></tr>";
+        document.getElementById("table").innerHTML += row;
+      }
+    }
+  </script>
+</body>
+</html>
